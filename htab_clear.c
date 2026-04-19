@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "htab_struct.h"
+#include "htab_private.h"
 
 void htab_clear(htab_t * t){
     for(size_t i = 0; i < t->arr_size; i++){
