@@ -1,11 +1,15 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "htab_private.h"
 
 
 htab_t * htab_init(size_t n){
     htab_t* t = malloc(sizeof(htab_t) + n * sizeof(htab_item_t*));
-    if(t == NULL) return NULL;
+    if(t == NULL){
+        fprintf(stderr, "Memory allocation error");
+        return NULL;
+    }
 
     t->size = 0;
     t->arr_size = n;

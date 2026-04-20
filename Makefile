@@ -22,6 +22,9 @@ libhtab.a: $(OBJS)
 libhtab.so: $(OBJS)
 	$(CC) $(CFLAGS) -shared -fPIC -o $@ $^
 
+io.o: io.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 tac.o: tac.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
